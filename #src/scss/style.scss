@@ -1,0 +1,43 @@
+
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url("../fonts/#{$file_name}.woff") format("woff"),
+		url("../fonts/#{$file_name}.woff2") format("woff2");
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+
+}
+
+@import "fonts";
+
+body {
+	font-style: 16px;
+	display: flex;
+}
+
+h1 {
+	color: red;
+	font-family: "Montserrat-SemiBold";
+	letter-spacing: 0.3px;
+}
+
+a {
+	transform: scale(0.5);
+}
+
+span {
+
+	@media (max-width: 768px) {
+		font-size: 16px;
+	}
+}
+
+div {
+	color: green;
+	@media (max-width: 768px) {
+		font-size: 20px;
+	}
+}
